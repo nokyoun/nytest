@@ -1,0 +1,24 @@
+<!--bhunyawat-->
+
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<h2>Bhunyawat</h2>
+
+<div class="row">
+    {% for product in products %}
+		<div class="col-lg-4">
+			<div class="box-element product">
+                <img class="thumbnail" src="{{product.imageURL}}">
+                <div class="box-element product">
+                    <h6><strong>{{product.name}}</strong></h6> <hr>
+                    <p style="float: left"><strong>{{product.price|floatformat:2}}</strong></p>
+                    <br>
+                </div>
+            </div>
+		</div>
+
+    {% endfor %}
+		
+</div>
+{% endblock content %}
