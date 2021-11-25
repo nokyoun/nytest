@@ -82,7 +82,10 @@ def store3(request):
     return render(request, 'store/store3.html', context)
 
 def home(request):
-    last_ten = Product.objects.filter()[:9]
+    count = Product.objects.filter().count()
+    print('home', count)
+    n = count - 9
+    last_ten = Product.objects.filter()[n:count]
     last_ten_in_ascending_order = reversed(last_ten)
     context = {'products':last_ten_in_ascending_order}
     return render(request, 'store/home.html', context)
