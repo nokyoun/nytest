@@ -65,19 +65,25 @@ def logoutUser(request):
 
 def store(request):
     #wake
-    products = Product.objects.filter(brand_id=2)
+    count = Product.objects.filter().count()
+    print('home', count)
+    products = Product.objects.filter(brand_id=2)[:count:-1]
     context = {'products':products}
     return render(request, 'store/store.html', context)
 
 def store2(request):
     #jew4u
-    products = Product.objects.filter(brand_id=1)
+    count = Product.objects.filter().count()
+    print('home', count)
+    products = Product.objects.filter(brand_id=1)[:count:-1]
     context = {'products':products}
     return render(request, 'store/store2.html', context)
 
 def store3(request):
     #bhunyawat
-    products = Product.objects.filter(brand_id=4)
+    count = Product.objects.filter().count()
+    print('Count', count)
+    products = Product.objects.filter(brand_id=4)[:count:-1]
     context = {'products':products}
     return render(request, 'store/store3.html', context)
 
