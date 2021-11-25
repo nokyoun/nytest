@@ -130,13 +130,13 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    str(BASE_DIR.joinpath('static')),
+    #str(BASE_DIR.joinpath('static')),
 ]
 
 #STATICFILES_STORAGE = 'whitenoise.stotage.CompressedManifestStaticFilesStorage'
-MEDIA_URL = '/images/'
+#MEDIA_URL = '/images/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'static/')
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
